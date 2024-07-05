@@ -1,0 +1,22 @@
+.Layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;;
+  grid-template-areas:
+  "Header Header Header"
+  "aside main main"
+  "Footer Footer Footer";
+  min-height: 100vh;
+}
+.header {
+  grid-area: Header;
+}
+.aside {
+  grid-area: aside;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: Footer;
+}
