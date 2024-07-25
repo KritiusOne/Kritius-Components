@@ -24,7 +24,6 @@ export const Carousel: React.FC = () => {
   if (currentIndex > arr.length - 3) {
     console.log(currentIndex)
     setCurrentIndex(0)
-    console.log("hi")
   }
   useEffect(()=>{
     window.addEventListener("resize", ()=> setNumCards(window.innerWidth <= 600 ? 1 : window.innerWidth <= 830 ? 2 : 3))

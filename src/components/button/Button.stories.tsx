@@ -12,48 +12,43 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     primary: true,
     children: 'Button',
+    size: "medium",
+    colorButton: "blue"
   },
 };
-
-export const ExtraLarge: Story = {
+export const SmallRed: Story = {
   args: {
-    children: 'Extremadamente largo',
-    size: "extraLarge"
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    children: "Grande"
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    children: 'Medium',
-    size: "medium"
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    children: "Small"
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    primary: true,
-    children: 'Delete now',
-    className: "bg-red-500 border-red-500",
-    size: "extraLarge"
+    primary: false,
+    children: <span> texto </span>,
+    size: "small",
+    colorButton: "red"
   }
-};
+}
+export const SecundaryMediumBlue: Story = {
+  args: {
+    primary: false,
+    children: "Secundary blue",
+    size: "medium",
+    colorButton: "blue"
+  }
+}
+export const SecundaryDarkLarge: Story = {
+  args: {
+    primary: false,
+    children: "Secundary dark",
+    size: "large",
+    colorButton: "Dark"
+  }
+}
+export const YellowSecundary: Story = {
+  args: {
+    primary: false,
+    children: "Secundary yellow",
+    size: "large",
+    colorButton: "yellow"
+  }
+}
