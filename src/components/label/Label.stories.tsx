@@ -17,18 +17,21 @@ type Story = StoryObj<typeof Label>
 export const Base: Story = {
   args: {
     stateData: "normal",
-    children: "Base"
+    children: "Base",
+    labelColor: "blue"
   }
 }
 export const Error: Story = {
   args: {
     stateData: "error",
-    children: "Error"
+    children: "Error",
+    labelColor: "Dark"
   }
 }
 export const Success: Story = {
   args: {
     stateData: "success",
-    children: "Success"
+    children: "Success",
+    labelColor: "yellow"
   }
 }
