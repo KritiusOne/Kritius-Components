@@ -16,19 +16,43 @@ type Story = StoryObj<typeof Input>
 
 export const Base: Story = {
   args: {
-    stateData: "normal",
-    placeholder: "Base"
+    placeholder: "Base",
+    uniqueBorder: false,
+    inputColor: "Dark"
   }
 }
-export const Error: Story = {
+export const Blue: Story = {
   args: {
-    stateData: "error",
-    placeholder: "error"
+    placeholder: "Blue",
+    uniqueBorder: true,
+    inputColor: "blue"
   }
 }
-export const Success: Story = {
+export const Red: Story = {
   args: {
-    stateData: "success",
-    placeholder: "Success"
+    placeholder: "Red",
+    uniqueBorder: false,
+    inputColor: "red"
+  }
+}
+export const Yellow: Story = {
+  args: {
+    placeholder: "Yellow",
+    uniqueBorder: true,
+    inputColor: "yellow"
+  }
+}
+export const Dark: Story = {
+  args: {
+    placeholder: "Dark",
+    uniqueBorder: false,
+    inputColor: "Dark"
+  }
+}
+export const Light: Story = {
+  args: {
+    placeholder: "Light",
+    uniqueBorder: false,
+    inputColor: "Light"
   }
 }
