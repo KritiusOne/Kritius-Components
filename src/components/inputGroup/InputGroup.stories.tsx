@@ -14,7 +14,6 @@ export default meta;
 type Story = StoryObj<typeof InputGroup>
 export const Base: Story = {
   args: {
-    stateData: "normal",
     textLabel: "Base",
     placeholder: "normal"
   }
