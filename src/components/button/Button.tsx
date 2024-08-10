@@ -46,7 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const buttonClass = useMemo(() => classNames(
-    'font-bold text-md text-center text-white border-2 border-solid rounded-md transition-colors ease-out',
+    'font-bold text-md text-center border-2 border-solid rounded-md transition-colors ease-out',
     getColorClasses(primary, colorButton),
     getSizeClasses(size)
   ), [primary, colorButton, size]);
