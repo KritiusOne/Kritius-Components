@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { IconSearch } from '@tabler/icons-react';
 import { Dialog } from "../dialog/Dialog"
+import { Button } from '../button/Button';
 
 export const SearchBar: React.FC = () => {
-  const [viewModal, setViewModal] = useState(false)
+  const [viewModal, setViewModal] = useState(false) // La logica del cerrado clickeando la parte gris del modal depende de la implementación
   return (
     <div className='w-screen w-creen'>
       <div className='w-full h-96 flex justify-center items-center'>
@@ -26,9 +27,20 @@ export const SearchBar: React.FC = () => {
         </div>
       </div>
       {
-        viewModal && (<Dialog>
-          <div className='w-full h-full bg-white'>
-            algo
+        viewModal && (
+        <Dialog onClose={()=> setViewModal(!viewModal) }>
+          <div className='w-full h-full text-gray-200 bg-[#1e293b] flex flex-row justify-center items-center rounded-md pr-3'>
+            <div className='text-center p-2'>
+              <IconSearch />
+            </div>
+            <label className='flex-1 h-full p-2 cursor-text'>
+              <input type="text" className='h-full w-full bg-transparent border-none outline-none ' placeholder='Quick search...' />
+            </label>
+            <div className='py-2'>
+              <Button onClick={()=> setViewModal(false)} primary={false} size='small' colorButton='Light' >
+                esc
+              </Button>
+            </div>
           </div>
         </Dialog>)
       }
