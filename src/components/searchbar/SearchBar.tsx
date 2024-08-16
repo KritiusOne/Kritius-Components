@@ -1,16 +1,30 @@
-import React, { useState } from 'react'
+import React, { KeyboardEvent, useEffect, useState } from 'react'
 import { IconSearch } from '@tabler/icons-react';
 import { Dialog } from "../dialog/Dialog"
 import { Button } from '../button/Button';
 
 export const SearchBar: React.FC = () => {
   const [viewModal, setViewModal] = useState(false) // La logica del cerrado clickeando la parte gris del modal depende de la implementación
+  useEffect(()=>{
+    const handleOpenSearchBar = (e:KeyboardEvent)=>{
+      if(!viewModal && e.altKey){
+        if(e.key.toLowerCase() == "k"){
+          setViewModal(true)
+        }
+      }
+    }
+    window.addEventListener("keydown", handleOpenSearchBar)
+  })
+  const handleEscForLeave = (e: KeyboardEvent<HTMLInputElement>)=>{
+    if(e.key.toLowerCase() == "escape" && viewModal){
+      setViewModal(false)
+    }
+  }
   return (
     <div className='w-screen w-creen'>
       <div className='w-full h-96 flex justify-center items-center'>
         <div
           onClick={() => {
-            console.log(viewModal)
             setViewModal(!viewModal)
           }}
           className='h-8 w-72 flex flex-row justify-center items-center text-center gap-2 bg-[#1e293b] text-gray-200 rounded-lg cursor-pointer
@@ -22,7 +36,7 @@ export const SearchBar: React.FC = () => {
             Quick search...
           </span>
           <span className='p-2 text-center text-pretty'>
-            Ctrl K
+            Alt K
           </span>
         </div>
       </div>
@@ -34,7 +48,7 @@ export const SearchBar: React.FC = () => {
               <IconSearch />
             </div>
             <label className='flex-1 h-full p-2 cursor-text'>
-              <input type="text" className='h-full w-full bg-transparent border-none outline-none ' placeholder='Quick search...' />
+              <input onKeyDown={handleEscForLeave} type="text" className='h-full w-full bg-transparent border-none outline-none ' placeholder='Quick search...' />
             </label>
             <div className='py-2'>
               <Button onClick={()=> setViewModal(false)} primary={false} size='small' colorButton='Light' >
