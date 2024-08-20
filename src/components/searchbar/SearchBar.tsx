@@ -3,7 +3,10 @@ import { IconSearch } from '@tabler/icons-react';
 import { Dialog } from "../dialog/Dialog"
 import { Button } from '../button/Button';
 
-export const SearchBar: React.FC = () => {
+interface Props {
+  controledH: boolean
+}
+export const SearchBar: React.FC<Props> = ({controledH}) => {
   const [viewModal, setViewModal] = useState(false) // La logica del cerrado clickeando la parte gris del modal depende de la implementación
   useEffect(()=>{
     const handleOpenSearchBar = (e:KeyboardEvent)=>{
@@ -21,8 +24,8 @@ export const SearchBar: React.FC = () => {
     }
   }
   return (
-    <div className='w-screen w-creen'>
-      <div className='w-full h-96 flex justify-center items-center'>
+    <div className='w-full h-full'>
+      <div className={`w-full ${controledH ? "h-full" : "h-96"} flex justify-center items-center`}>
         <div
           onClick={() => {
             setViewModal(!viewModal)

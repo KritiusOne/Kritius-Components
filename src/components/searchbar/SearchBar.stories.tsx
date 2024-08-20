@@ -13,5 +13,7 @@ export default meta
 type Story = StoryObj<typeof SearchBar>
 
 export const Base: Story = {
-
+  parameters: {
+    controledH: false
+  }
 }
