@@ -7,14 +7,11 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 export const Header: React.FC<Props> = ({...props}) => {
   return (
-    <header {...props} className={`w-screen h-20 flex flex-row justify-around items-center px-3 py-1 gap-2 ${props.className}`}>
-      <span>
-        
-      </span>
+    <header {...props} className={`w-screen h-20 flex flex-row justify-around items-center px-3 py-1 gap-2 bg-blue-700 text-white ${props.className}`}>
       <nav className='px-2'>
         <SearchBar controledH={true} />
       </nav>
-      <ul className='flex flex-row items-center justify-around gap-2 flex-1'>
+      <ul className='flex flex-row items-center justify-around gap-2 flex-1 font-bold'>
         <li>
           Home
         </li>
